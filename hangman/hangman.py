@@ -72,9 +72,12 @@ def start():
 \/ /_/ \__,_|_| |_|\__, \/    \/\__,_|_| |_|
                    |___/                    """)
     random_word = random.choice(word_list)
-    total_guess = ["?","?","?","?","?","?","?","?"]
+    obscured_word = []
+    for char in random_word:
+        obscured_word.append("?")
+
     lives = 6
-    while "?" in total_guess:
+    while "?" in obscured_word:
         guess = input("\n\nGuess a leter:")
     
         if guess in random_word:
@@ -82,18 +85,18 @@ def start():
             a = ""
             for i in random_word:
                 if guess == i :
-                    total_guess[x] = i
+                    obscured_word[x] = i
                 x += 1
         
-            for i in range(len(total_guess)):
-                a += total_guess[i]
+            for i in range(len(obscured_word)):
+                a += obscured_word[i]
             print(a)
         else:
             a = ""
             lives -= 1
             art(lives)
-            for i in range(len(total_guess)):
-                a += total_guess[i]
+            for i in range(len(obscured_word)):
+                a += obscured_word[i]
             print(a)
             if lives == 0:
                 print("""                  __           _   
