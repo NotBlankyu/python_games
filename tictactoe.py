@@ -1,5 +1,8 @@
 import os
 
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')
+
 #starting field
 a = [" "," "," "," "," "," "," "," "," "]
 #resets the field
@@ -18,7 +21,7 @@ def update(x , player):
     
 #draws the current frame
 def draw():
-    os.system('cls||clear')
+    cls()
     print(f"  {a[0]} | {a[1]} | {a[2]}\n____|___|____ \n  {a[3]} | {a[4]} | {a[5]}\n____|___|____  \n    |   |  \n  {a[6]} | {a[7]} | {a[8]}")
 
 #starts a game
