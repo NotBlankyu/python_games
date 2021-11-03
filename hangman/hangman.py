@@ -1,5 +1,9 @@
 import os
 import random
+
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')
+
 def art(x):
     arts = {
         6 : """
@@ -87,7 +91,7 @@ def start():
                 if guess == i :
                     obscured_word[x] = i
                 x += 1
-            os.system('cls||clear')
+            cls()
             art(lives)
             for i in range(len(obscured_word)):
                 a += obscured_word[i]
@@ -95,7 +99,7 @@ def start():
         else:
             a = ""
             lives -= 1
-            os.system('cls||clear')
+            cls()
             art(lives)
             for i in range(len(obscured_word)):
                 a += obscured_word[i]
