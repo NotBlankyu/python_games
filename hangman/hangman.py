@@ -1,4 +1,4 @@
-
+import os
 import random
 def art(x):
     arts = {
@@ -87,13 +87,15 @@ def start():
                 if guess == i :
                     obscured_word[x] = i
                 x += 1
-        
+            os.system('cls||clear')
+            art(lives)
             for i in range(len(obscured_word)):
                 a += obscured_word[i]
             print(a)
         else:
             a = ""
             lives -= 1
+            os.system('cls||clear')
             art(lives)
             for i in range(len(obscured_word)):
                 a += obscured_word[i]
